@@ -1,15 +1,13 @@
-{{ config (
-    materialized="table"
-)}}
+use warehouse development_wh;
 
-with customers as (
+;with customers as (
 
     select
         id as customer_id,
         first_name,
         last_name
 
-    from dbt_raw.jaffle_shop.customers
+    from development_db.dbt_aaitov_staging.customers
 
 ),
 
@@ -21,7 +19,7 @@ orders as (
         order_date,
         status
 
-    from dbt_raw.jaffle_shop.orders
+    from development_db.dbt_aaitov_staging.orders
 
 ),
 
@@ -58,5 +56,3 @@ final as (
 )
 
 select * from final
-limit 500
-/* limit added automatically by dbt cloud */
