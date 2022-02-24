@@ -1,11 +1,11 @@
-;with customers as (
+with customers as (
 
     select
         id as customer_id,
         first_name,
         last_name
 
-    from development_db.dbt_aaitov_staging.customers
+    from dbt_aaitov_staging.customers
 
 ),
 
@@ -17,7 +17,7 @@ orders as (
         order_date,
         status
 
-    from development_db.dbt_aaitov_staging.orders
+    from dbt_aaitov_staging.orders
 
 ),
 
