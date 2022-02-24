@@ -1,5 +1,3 @@
-use warehouse development_wh;
-
 ;with customers as (
 
     select
