@@ -1,12 +1,6 @@
-with orders as (
-    
-    select
+   select
         id as order_id,
         user_id as customer_id,
         order_date,
         status
-
-    from dbt_aaitov_staging.orders
-)
-
-select * from orders
+    from {{source('jaffle_shop','orders')}}
